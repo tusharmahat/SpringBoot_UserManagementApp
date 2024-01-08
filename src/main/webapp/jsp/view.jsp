@@ -8,8 +8,10 @@
 <title>View Page</title>
 </head>
 <body>
-	First Name: ${user.fname } Last Name: ${user.lname } Gender:
-	${user.gender } Meals:
+	First Name: ${user.fname }
+	<br> Last Name: ${user.lname }
+	<br> Gender: ${user.gender }
+	<br> Meals:
 	<c:forEach var="meal" items="${user.meals}">
 ${meal}
 </c:forEach>
