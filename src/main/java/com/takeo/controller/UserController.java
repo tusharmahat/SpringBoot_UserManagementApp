@@ -10,15 +10,19 @@ import com.takeo.entity.User;
 @Controller
 public class UserController {
 
-	@RequestMapping("/loadForm")
+	@RequestMapping("/")
+	public String loadHome(Model model) {
+		return "index"; // prefix:/jsp/ , suffix: .jsp so /jsp/user.jsp
+	}
+	@RequestMapping("/register")
 	public String loadForm(Model model) {
 		User user = new User();
 		model.addAttribute("user",user);
-		return "index"; // prefix:/jsp/ , suffix: .jsp so /jsp/user.jsp
+		return "register"; // prefix:/jsp/ , suffix: .jsp so /jsp/user.jsp
 	}
 	
 	@RequestMapping("/insert")
-	public String handleForm(@ModelAttribute("user") User user) {
+	public String handleForm(@ModelAttribute User user) {
 		
 		//@ModelAttribute holds the data coming from view component
 		//carry the data to view component

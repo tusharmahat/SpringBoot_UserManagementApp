@@ -1,17 +1,38 @@
 package com.takeo.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.util.List;
 import java.util.ArrayList;
 
+//@Entity
+//@Table(name = "User")
 @Setter
 @Getter
 @NoArgsConstructor
 public class User {
+//	@Id
+//	@Column(name = "uid")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int uid;
+//	@Column(name = "fname")
 	private String fname;
+//	@Column(name = "lname")
 	private String lname;
-	private String gender;
-	private List<String> meals=new ArrayList<>();
+//	@Column(name = "email")
+	private String email;
+//	@Column(name = "uname")
+	private String uname;
+//	@Column(name = "password")
+	private String password;
+//	@Column(name = "meals")
+	private List<String> meals = new ArrayList<>();
 }
